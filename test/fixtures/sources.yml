@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ibc: 1
+  type: 
+  curr: MyString
+  name: MyString
+  code: MyString
+  text: MyString
+  mult: 1
+  stks: 
+  misc: 
+
+two:
+  ibc: 1
+  type: 
+  curr: MyString
+  name: MyString
+  code: MyString
+  text: MyString
+  mult: 1
+  stks: 
+  misc: 

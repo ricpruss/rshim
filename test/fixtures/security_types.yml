@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  uid: 1
+  type: 
+  test: MyString
+  lable: MyString
+
+two:
+  uid: 1
+  type: 
+  test: MyString
+  lable: MyString

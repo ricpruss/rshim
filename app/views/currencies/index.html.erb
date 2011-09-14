@@ -1,0 +1,25 @@
+<h1>Listing currencies</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Icc</th>
+    <th>Plural</th>
+    <th>Country</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @currencies.each do |currency| %>
+  <tr>
+    <td><%= currency.code %></td>
+    <td><%= currency.icc %></td>
+    <td><%= currency.plural %></td>
+    <td><%= currency.locality.country %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Home', root_url %>

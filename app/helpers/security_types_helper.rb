@@ -1,0 +1,2 @@
+module SecurityTypesHelper
+end

@@ -1,0 +1,26 @@
+<h1>Listing security_types</h1>
+
+<table>
+  <tr>
+    <th>Uid</th>
+    <th>Type</th>
+    <th>IB_Text</th>
+    <th>Label</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @security_types.each do |security_type| %>
+  <tr>
+    <td><%= security_type.uid %></td>
+    <td><%= security_type.ib_text %></td>
+    <td><%= security_type.security_type %></td>
+    <td><%= security_type.label %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Home', root_url %>

@@ -1,0 +1,33 @@
+<%= form_for(@security_type) do |f| %>
+  <% if @security_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@security_type.errors.count, "error") %> prohibited this security_type from being saved:</h2>
+
+      <ul>
+      <% @security_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uid %><br />
+    <%= f.number_field :uid %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :test %><br />
+    <%= f.text_field :test %>
+  </div>
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

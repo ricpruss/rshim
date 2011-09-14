@@ -1,0 +1,64 @@
+<h1>Listing sources</h1>
+
+<%= form_tag sources_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+<div id="facet" class="digg_pagination">
+  <h3 class="page_info">Type</h3>
+  <div class="span">  
+    <ul>
+      <% @search.facet(:security_type_label).rows.each do |row| %>
+        <p>
+          <% if params[:security_type_label].blank? %>
+            <%= link_to row.value, :security_type_label => row.value %> (<%= row.count %>)
+          <% else %>
+            <strong><%= row.value %></strong> (<%= link_to "remove", :type => nil %>)
+          <% end %>
+        </p>
+      <% end %>
+    </ul>
+  </div>
+  
+</div>
+
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @posts %>
+    </div>
+    <%= will_paginate @search.results , :container => false %>
+</div>
+  
+<table>
+  <tr>
+    <th>Ibc</th>
+    <th>Type</th>
+    <th>Curr</th>
+    <th>Name</th>
+    <th>Code</th>
+    <th>Description</th>
+    <th>Mult</th>
+    <th>Stks</th>
+    <th>Misc</th>
+  </tr>
+
+<% @sources.each do |source| %>
+  <tr>
+    <td><%= source.ibc %></td>
+    <td><%= source.security_type.ib_text %></td>
+    <td><%= source.curr %></td>
+    <td><%= source.name %></td>
+    <td><%= source.code %></td>
+    <td><%= source.description %></td>
+    <td><%= source.mult %></td>
+    <td><%= source.stks %></td>
+    <td><%= source.misc %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Home', root_url %>

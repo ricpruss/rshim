@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Uid:</b>
+  <%= @security_type.uid %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @security_type.type %>
+</p>
+
+<p>
+  <b>Test:</b>
+  <%= @security_type.test %>
+</p>
+
+<p>
+  <b>Lable:</b>
+  <%= @security_type.label %>
+</p>
+
+
+<%= link_to 'Edit', edit_security_type_path(@security_type) %> |
+<%= link_to 'Back', security_types_path %>
