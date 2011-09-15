@@ -7,6 +7,7 @@ class SourcesController < ApplicationController
       fulltext params[:search]
       facet :security_type_label
       with :security_type_label, params[:security_type_label] if params[:security_type_label].present?
+      paginate(:page => params[:page])     
     end
 
     @sources = @search.results
