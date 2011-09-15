@@ -21,8 +21,32 @@ One technique that I did not use was creating views in mysql.
 - get portfolio query working
 
 == Installing
+This assumes a working git, mysql and trading shim environment on the box.
 
-[TODO] puts some notes on installing with ./shim location reference
+These are written for the folks who just use the C++ shim and are assumed to have limited
+ruby and rails knowledge.  Hopefully it's simple enough:
+
+For the Linux folks, you may need to install, for Mac it should be fine.
+Install libmysqlclient-dev , libxml2-dev, libxslt-dev (sudo apt-get install libmysqlclient-dev libxml2-dev libxslt-dev)
+
+Install RVM ( a safe little environment for running custom rubies and project gems with sudo)
+http://beginrescueend.com/rvm/install/
+
+then once that is working:
+rvm install 1.9.2
+rvm use 1.9.2
+rvm gemset create rshim
+rvm gemset use rshim
+gem install bundle
+git clone https://github.com/ricpruss/rshim.git
+cd rshim
+bundle install
+rake sunspot:solr:start
+rake sunspot:reindex
+
+rails server
+
+[TODO] puts some detailed notes on installing with mysql, shim, data, patch fixes and ./shim location reference
 
 From here the readme is normal rails README
 
